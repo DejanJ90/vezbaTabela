@@ -20,14 +20,11 @@ function calc(arry) {
     return paid;
 };
 
-function compare(arry) {
+function possiblePayments(arry) {
     var sum = 0
 
     for (var i = 0; i < arry.length; i++) {
-        console.log(arry[i].previousElementSibling.classList);
-
-        console.log(arry[i].previousElementSibling.classList[3]);
-
+       
         if (arry[i].previousElementSibling.classList[3] === "placeno" && arry[i].classList[3] !== "placeno") {
             sum += parseInt(arry[i].innerText);
         }
@@ -36,8 +33,6 @@ function compare(arry) {
     return sum;
 };
 
-
-
     ukm1.innerText = calc(installment1) + ".00 ";
-    ukm2.innerText = calc(installment2) + ".00 " + " (" + compare(installment2) + ".00 " + ")";
-    ukm3.innerText = calc(installment3) + ".00 " + " (" + compare(installment3) + ".00 " + ")";
+    ukm2.innerText = calc(installment2) + ".00 " + " (" + possiblePayments(installment2) + ".00 " + ")";
+    ukm3.innerText = calc(installment3) + ".00 " + " (" + possiblePayments(installment3) + ".00 " + ")";
